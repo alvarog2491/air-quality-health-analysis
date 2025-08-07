@@ -1,0 +1,33 @@
+# Dockerfile.etl
+FROM python:3.11-slim AS base
+
+
+LABEL maintainer="Alvaro"
+
+# Environment settings
+ENV PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    POETRY_VIRTUALENVS_CREATE=false \
+    PYTHONPATH=/app/src
+
+WORKDIR /app
+
+# Update system packages to reduce vulnerabilities
+RUN apt-get update && apt-get upgrade -y && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Copy pyproject.toml first to leverage Docker build cache
+COPY pyproject.toml pyproject.toml
+# COPY constraints.txt constraints.txt
+
+# Copy the entire source code
+COPY . .
+
+# Upgrade pip and build tools
+RUN python -m pip install --upgrade pip setuptools wheel
+
+# Install only the dependencies for the ETL extra
+# If using constraints: RUN pip install -r constraints.txt ".[etl]"
+RUN pip install ".[etl]"
+
+# Default command (run from source directory)
+CMD ["python3", "src/etl_pipeline/main_orchestrator.py"]

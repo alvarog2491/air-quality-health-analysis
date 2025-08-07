@@ -126,6 +126,3 @@ logs/
 
 # notebooks
 /notebooks/*
-
-# dataset
-src/dataset_creator/data/output/dataset_*

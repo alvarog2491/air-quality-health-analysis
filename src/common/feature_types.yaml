@@ -1,0 +1,106 @@
+preprocess:
+  var_dtypes:
+    Air Pollutant: category
+    Air Pollutant Description: string
+    Data Aggregation Process: category
+    Year: datetime64[ns]
+    Air Pollution Level: float64
+    Unit Of Air Pollution Level: category
+    Air Quality Station Type: category
+    Air Quality Station Area: category
+    Longitude: float64
+    Latitude: float64
+    Altitude: float64
+    Province: category
+    Quality: category
+    Respiratory_diseases_total: int64
+    Life_expectancy_total: float64
+    pib: float64
+    Population: int64
+    respiratory_deaths_per_100k: float64
+
+  categorical_features:
+    - name: Air Pollutant
+      categories: ["no2", "o3", "pm10", "pm2.5", "so2"]
+    - name: Unit Of Air Pollution Level
+      categories: [ug/m3]
+    - name: Air Quality Station Type
+      categories: ["background", "industrial", "traffic"]
+    - name: Air Quality Station Area
+      categories: ["rural", "suburban", "urban"]
+    - name: Province
+      categories:
+        [
+          "A Coruna",
+          "Albacete",
+          "Alicante/Alacant",
+          "Almeria",
+          "Araba/Alava",
+          "Asturias",
+          "Avila",
+          "Badajoz",
+          "Barcelona",
+          "Bizkaia",
+          "Burgos",
+          "Caceres",
+          "Cadiz",
+          "Cantabria",
+          "Castellon/Castello",
+          "Ciudad Real",
+          "Cordoba",
+          "Cuenca",
+          "Gipuzkoa",
+          "Girona",
+          "Granada",
+          "Guadalajara",
+          "Huelva",
+          "Huesca",
+          "Jaen",
+          "La Rioja",
+          "Leon",
+          "Lleida",
+          "Lugo",
+          "Madrid",
+          "Malaga",
+          "Murcia",
+          "Navarra",
+          "Ourense",
+          "Palencia",
+          "Pontevedra",
+          "Salamanca",
+          "Segovia",
+          "Sevilla",
+          "Soria",
+          "Tarragona",
+          "Teruel",
+          "Toledo",
+          "Valencia",
+          "Valladolid",
+          "Zamora",
+          "Zaragoza",
+        ]
+    - name: Quality
+      categories:
+        [
+          "buena",
+          "desfavorable",
+          "muy desfavorable",
+          "razonablemente buena",
+          "regular",
+        ]
+
+  numerical_features:
+    - Air Pollution Level
+    - Longitude
+    - Latitude
+    - Altitude
+    - Population
+    - Respiratory_diseases_total
+    - Life_expectancy_total
+    - pib
+    - respiratory_deaths_per_100k
+
+  date_features:
+    - Year
+
+  drop_colnames: []

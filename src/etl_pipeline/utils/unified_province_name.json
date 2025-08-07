@@ -1,0 +1,251 @@
+{
+  "A Coruna": [
+    "ACoruña",
+    "Coruña, A",
+    "Coruña,A",
+    "Coruña (A)",
+    "Coruña_A",
+    "A Coruña",
+    "Coru�a,A",
+    "15 Coruña, A",
+    "15 Coru�a, A"
+  ],
+  "Albacete": [
+    "02 Albacete"
+  ],
+  "Alicante/Alacant": [
+    "Alacant / Alicante",
+    "Alicante",
+    "03 Alicante/Alacant"
+  ],
+  "Almeria": [
+    "Almería",
+    "Almer�a",
+    "04 Almería",
+    "04 Almer�a"
+  ],
+  "Araba/Alava": [
+    "Álava",
+    "Araba/Álava",
+    "Araba/�lava",
+    "01 Araba/Álava",
+    "01 Araba/�lava"
+  ],
+  "Asturias": [
+    "ASTURIAS, PRINCIPADO DE",
+    "Asturias / Asturies",
+    "33 Asturias"
+  ],
+  "Avila": [
+    "Ávila",
+    "�vila",
+    "05 Ávila",
+    "05 �vila"
+  ],
+  "Badajoz": [
+    "06 Badajoz"
+  ],
+  "Illes Balears": [
+    "BALEARS, ILLES",
+    "Balears,Illes",
+    "IllesBalears",
+    "Balears",
+    "07 Balears, Illes"
+  ],
+  "Barcelona": [
+    "08 Barcelona"
+  ],
+  "Bizkaia": [
+    "Vizcaya",
+    "48 Bizkaia"
+  ],
+  "Burgos": [
+    "09 Burgos"
+  ],
+  "Caceres": [
+    "Cáceres",
+    "C�ceres",
+    "10 Cáceres",
+    "10 C�ceres"
+  ],
+  "Cadiz": [
+    "Cádiz",
+    "C�diz",
+    "11 Cádiz",
+    "11 C�diz"
+  ],
+  "Cantabria": [
+    "CANTABRIA",
+    "Santander",
+    "39 Cantabria"
+  ],
+  "Castellon/Castello": [
+    "Castelló / Castellón",
+    "Castellón",
+    "Castellón/Castelló",
+    "Castell�n/Castell�",
+    "12 Castellón/Castelló",
+    "12 Castell�n/Castell�"
+  ],
+  "Ciudad Real": [
+    "CiudadReal",
+    "Ciudad_Real",
+    "13 Ciudad Real"
+  ],
+  "Cordoba": [
+    "Córdoba",
+    "C�rdoba",
+    "14 Córdoba",
+    "14 C�rdoba"
+  ],
+  "Cuenca": [
+    "16 Cuenca"
+  ],
+  "Gipuzkoa": [
+    "Guipúzcoa",
+    "Erdialdea / Zona Media",
+    "20 Gipuzkoa"
+  ],
+  "Girona": [
+    "17 Girona"
+  ],
+  "Granada": [
+    "18 Granada"
+  ],
+  "Guadalajara": [
+    "19 Guadalajara"
+  ],
+  "Huelva": [
+    "21 Huelva"
+  ],
+  "Huesca": [
+    "22 Huesca"
+  ],
+  "Jaen": [
+    "Jaén",
+    "Ja�n",
+    "23 Jaén",
+    "23 Ja�n"
+  ],
+  "Leon": [
+    "León",
+    "Le�n",
+    "24 León",
+    "24 Le�n"
+  ],
+  "Lleida": [
+    "25 Lleida"
+  ],
+  "Lugo": [
+    "27 Lugo"
+  ],
+  "Madrid": [
+    "Alcalá de Henares",
+    "Alcobendas",
+    "Alcorcón",
+    "Comunidad de Madrid",
+    "Fuenlabrada",
+    "Getafe",
+    "Leganés",
+    "MADRID, COMUNIDAD DE",
+    "Móstoles",
+    "Parla",
+    "Torrejón de Ardoz",
+    "28 Madrid"
+  ],
+  "Malaga": [
+    "Málaga",
+    "M�laga",
+    "29 Málaga",
+    "29 M�laga"
+  ],
+  "Murcia": [
+    "MURCIA, REGIÓN DE",
+    "Región de Murcia",
+    "30 Murcia"
+  ],
+  "Navarra": [
+    "Erriberagoiena / Ribera Alta",
+    "NAVARRA, COMUNIDAD FORAL DE",
+    "Pamplona",
+    "Pamplona / Iruña",
+    "Zangozerria / Comarca de Sangüesa",
+    "Navarra - Nafarroa",
+    "Iruñerria / Comarca de Pamplona",
+    "31 Navarra"
+  ],
+  "Ourense": [
+    "32 Ourense"
+  ],
+  "Palencia": [
+    "34 Palencia"
+  ],
+  "Las Palmas": [
+    "LasPalmas",
+    "Palmas,Las",
+    "Las_Palmas",
+    "35 Palmas, Las"
+  ],
+  "Pontevedra": [
+    "36 Pontevedra"
+  ],
+  "La Rioja": [
+    "Logroño",
+    "RIOJA, LA",
+    "Rioja,La",
+    "La_Rioja",
+    "26 Rioja, La"
+  ],
+  "Salamanca": [
+    "37 Salamanca"
+  ],
+  "Santa Cruz de Tenerife": [
+    "Santa Cruz de Tenerife",
+    "SantaCruzdeTenerife",
+    "S.C.Tenerife",
+    "38 Santa Cruz de Tenerife"
+  ],
+  "Segovia": [
+    "40 Segovia"
+  ],
+  "Sevilla": [
+    "41 Sevilla"
+  ],
+  "Soria": [
+    "42 Soria"
+  ],
+  "Tarragona": [
+    "43 Tarragona"
+  ],
+  "Teruel": [
+    "44 Teruel"
+  ],
+  "Toledo": [
+    "45 Toledo"
+  ],
+  "Valencia": [
+    "València / Valencia",
+    "Valencia",
+    "Valencia/València",
+    "Valencia/Val�ncia",
+    "46 Valencia/València",
+    "46 Valencia/Val�ncia"
+  ],
+  "Valladolid": [
+    "47 Valladolid"
+  ],
+  "Zamora": [
+    "49 Zamora"
+  ],
+  "Zaragoza": [
+    "50 Zaragoza"
+  ],
+  "Ceuta": [
+    "CEUTA",
+    "51 Ceuta"
+  ],
+  "Melilla": [
+    "MELILLA",
+    "52 Melilla"
+  ]
+}

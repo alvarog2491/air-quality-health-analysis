@@ -119,6 +119,7 @@ ehthumbs.db
 
 # Claude
 CLAUDE.md
+.claude
 
 # logs
 logs/

@@ -1,0 +1,106 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "air-quality-health-analysis"
+version = "0.1.0"
+description = "Analysis of air quality, health outcomes, and socioeconomic data across Spanish provinces for my master's thesis. Combines data from multiple sources to study relationships between environmental factors and public health indicators. Includes automated data processing pipelines, machine learning models, and a web interface for predictions."
+authors = [
+    {name = "Alvaro Granados", email = "alvarog2491@gmail.com"}
+]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = ["etl", "air-quality", "health-analysis", "data-pipeline", "spain"]
+
+dependencies = [
+    "pandas==2.3.0",
+    "numpy==2.3.1",
+    "PyYAML==6.0.2",
+    "joblib==1.5.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black>=22.0",
+    "pytest-cov>=4.0",
+]
+
+etl = [
+    "matplotlib==3.10.3",
+    "seaborn==0.13.2",
+]
+
+
+[project.urls]
+Homepage = "https://github.com/alvarog2491/air-quality-health-analysis"
+Repository = "https://github.com/alvarog2491/air-quality-health-analysis"
+Issues = "https://github.com/alvarog2491/air-quality-health-analysis/issues"
+
+[project.scripts]
+air-quality-etl = "etl_pipeline.main_orchestrator:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 79
+target-version = ['py311', 'py312']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.pytest.ini_options]
+testpaths = ["src/etl_pipeline/tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+addopts = "-v --tb=short"
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "unit: marks tests as unit tests",
+]
+
+[tool.coverage.run]
+source = ["etl_pipeline"]
+omit = [
+    "*/tests/*",
+    "*/test_*.py",
+    "*/__pycache__/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "class .*\\bProtocol\\):",
+    "@(abc\\.)?abstractmethod",
+]

@@ -1,0 +1,8 @@
+services:
+  etl:
+    build:
+      context: .
+      dockerfile: src/etl_pipeline/Dockerfile.etl
+    image: air-quality/etl:local
+    volumes:
+      - ./src/etl_pipeline/data:/app/src/etl_pipeline/data

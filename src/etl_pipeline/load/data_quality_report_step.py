@@ -83,6 +83,7 @@ class DataQualityReportStep(ETLStep):
             "data_types": (
                 df.dtypes.astype(str).value_counts().to_dict()  # type: ignore
             ),
+            "year_statistics": self._year_statistics(df),
         }
 
         # Numeric column summary
@@ -110,6 +111,37 @@ class DataQualityReportStep(ETLStep):
             }
 
         self._save_report(report)
+
+    def _year_statistics(self, df: pd.DataFrame) -> Dict[str, Any]:
+        """
+        Compute year-related statistics from the dataset.
+
+        Args:
+            df: DataFrame to analyze.
+
+        Returns:
+            Dict[str, Any]: Statistics including min/max year and year counts.
+        """
+        if "Year" not in df.columns:
+            return {
+                "error": "Year column not found in dataset"
+            }
+        
+        # Convert Year column to datetime if it's not already
+        year_series = pd.to_datetime(df["Year"])
+        years = year_series.dt.year
+        
+        # Calculate year statistics
+        min_year = int(years.min())
+        max_year = int(years.max())
+        year_counts = years.value_counts().sort_index().to_dict()
+        
+        return {
+            "min_year": min_year,
+            "max_year": max_year,
+            "total_years": len(year_counts),
+            "year_counts": {int(year): int(count) for year, count in year_counts.items()}
+        }
 
     def _missing_data_stats(self, df: pd.DataFrame) -> Dict[str, Any]:
         """

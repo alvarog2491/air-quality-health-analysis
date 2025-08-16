@@ -69,9 +69,9 @@ def sample_dataframes() -> Dict[str, pd.DataFrame]:
         ),
         "province_population": pd.DataFrame(
             {
-                "Province": ["Madrid", "Barcelona", "Valencia"],
-                "Year": [2020, 2020, 2020],
-                "Population": [6500000, 5600000, 2500000],
+                "Province": ["Madrid", "Barcelona", "Valencia", "Madrid", "Barcelona", "Valencia"],
+                "Year": [2019, 2019, 2019, 2020, 2020, 2020],
+                "Population": [6400000, 5500000, 2450000, 6500000, 5600000, 2500000],
             }
         ),
     }
@@ -112,9 +112,9 @@ def sample_dataframes_for_transformation() -> Dict[str, pd.DataFrame]:
         ),
         "province_population": pd.DataFrame(
             {
-                "Province": ["Madrid", "Barcelona"],
-                "Year": [2020, 2021],
-                "Population": [6500000, 5600000],
+                "Province": ["Madrid", "Barcelona", "Madrid", "Barcelona"],
+                "Year": [2019, 2020, 2021, 2022],
+                "Population": [6400000, 5500000, 6600000, 5700000],
             }
         ),
     }
@@ -241,7 +241,8 @@ def initialize_test_data(tmp_path: Path) -> None:
         "Provincia,Valor\n02 Albacete,21000\n"
     )
 
-    # Población provincias
-    (socio_path / "poblacion_provincias.csv").write_text(
+    # Población provincias 2021
+    (socio_path / "poblacion_provincias_21.csv").write_text(
         "Provincias;Sexo;Periodo;Total\n" "02 Albacete;Total;2021;386.464\n"
     )
+

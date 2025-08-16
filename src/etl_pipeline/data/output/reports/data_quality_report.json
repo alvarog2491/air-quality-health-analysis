@@ -1,7 +1,7 @@
 {
-  "total_records": 25457,
+  "total_records": 27248,
   "total_columns": 18,
-  "memory_usage_mb": 4.5070953369140625,
+  "memory_usage_mb": 4.828020095825195,
   "duplicate_rows": "0",
   "missing_data": {
     "total_missing_values": "0",
@@ -15,124 +15,127 @@
     "string": 1,
     "datetime64[ns]": 1
   },
+  "year_statistics": {
+    "error": "Year column not found in dataset"
+  },
   "numeric_summary": {
-    "Air Pollution Level": {
-      "count": 25457.0,
-      "mean": 20.851712927681973,
-      "std": 18.290494736467586,
+    "air_pollution_level": {
+      "count": 27248.0,
+      "mean": 20.861722144744572,
+      "std": 18.427211578358204,
       "min": 0.016,
-      "25%": 6.852,
-      "50%": 15.4,
-      "75%": 28.156,
+      "25%": 6.8345,
+      "50%": 15.246500000000001,
+      "75%": 28.0045,
       "max": 103.407
     },
-    "Longitude": {
-      "count": 25457.0,
-      "mean": -3.120760419530974,
-      "std": 3.0053760698679297,
+    "longitude": {
+      "count": 27248.0,
+      "mean": -3.1234957171168527,
+      "std": 3.0082736392938627,
       "min": -9.1861,
-      "25%": -5.6389,
-      "50%": -3.5806,
-      "75%": -0.5275,
+      "25%": -5.6397,
+      "50%": -3.575,
+      "75%": -0.6033,
       "max": 3.3158
     },
-    "Latitude": {
-      "count": 25457.0,
-      "mean": 40.77169428055152,
-      "std": 2.170779209337981,
+    "latitude": {
+      "count": 27248.0,
+      "mean": 40.76690264606576,
+      "std": 2.1755305681266575,
       "min": 36.135,
       "25%": 39.4781,
       "50%": 41.2389,
       "75%": 42.7036,
       "max": 43.6983
     },
-    "Altitude": {
-      "count": 25457.0,
-      "mean": 344.852614212201,
-      "std": 336.6598784865035,
+    "altitude": {
+      "count": 27248.0,
+      "mean": 342.6708382266588,
+      "std": 335.733028097975,
       "min": 1.0,
       "25%": 40.0,
-      "50%": 216.0,
+      "50%": 215.0,
       "75%": 619.0,
       "max": 1930.0
     },
-    "Respiratory_diseases_total": {
-      "count": 25457.0,
-      "mean": 1735.9731311623523,
-      "std": 1892.8864178889626,
+    "respiratory_diseases_total": {
+      "count": 27248.0,
+      "mean": 1710.7748091603053,
+      "std": 1872.1023120852271,
       "min": 84.0,
-      "25%": 547.0,
-      "50%": 917.0,
+      "25%": 537.0,
+      "50%": 901.0,
       "75%": 1617.0,
       "max": 7340.0
     },
-    "Life_expectancy_total": {
-      "count": 25457.0,
-      "mean": 82.12173626114625,
-      "std": 1.3999465546228875,
+    "life_expectancy_total": {
+      "count": 27248.0,
+      "mean": 82.17426453317675,
+      "std": 1.3947705952742404,
       "min": 77.32,
-      "25%": 81.18,
-      "50%": 82.26,
-      "75%": 83.14,
+      "25%": 81.22,
+      "50%": 82.29,
+      "75%": 83.21,
       "max": 84.93
     },
     "pib": {
-      "count": 25457.0,
-      "mean": 23.428201359154656,
-      "std": 5.377727695996771,
+      "count": 27248.0,
+      "mean": 23.606235430123313,
+      "std": 5.413445898203635,
       "min": 10.432,
-      "25%": 19.318,
-      "50%": 22.414,
-      "75%": 27.546,
+      "25%": 19.472,
+      "50%": 22.71,
+      "75%": 27.746,
       "max": 38.711
     },
-    "Population": {
-      "count": 25457.0,
-      "mean": 1832274.66700711,
-      "std": 2044854.6407048935,
+    "population": {
+      "count": 27248.0,
+      "mean": 1833835.1323032882,
+      "std": 2046115.8292437294,
       "min": 88600.0,
-      "25%": 525835.0,
-      "50%": 955323.0,
+      "25%": 527268.25,
+      "50%": 959764.0,
       "75%": 1939527.0,
       "max": 6779888.0
     },
     "respiratory_deaths_per_100k": {
-      "count": 25457.0,
-      "mean": 102.7850300506737,
-      "std": 26.23923547266377,
+      "count": 27248.0,
+      "mean": 101.06326996476805,
+      "std": 26.563804561698092,
       "min": 49.16,
-      "25%": 84.21,
-      "50%": 96.89,
-      "75%": 117.03,
+      "25%": 82.5825,
+      "50%": 95.65,
+      "75%": 115.6725,
       "max": 218.17
     }
   },
   "categorical_summary": {
-    "Air Pollutant": {
+    "air_pollutant": {
       "unique_values": 5,
       "most_frequent": "no2"
     },
-    "Data Aggregation Process": {
+    "data_aggregation_process": {
       "unique_values": 1,
       "most_frequent": "annual mean / 1 calendar year"
     },
-    "Unit Of Air Pollution Level": {
+    "unit_of_air_pollution_level": {
       "unique_values": 1,
       "most_frequent": "ug/m3"
     },
-    "Air Quality Station Type": {
+    "air_quality_station_type": {
       "unique_values": 3,
       "most_frequent": "background"
     },
-    "Air Quality Station Area": {
+    "air_quality_station_area": {
       "unique_values": 3,
       "most_frequent": "urban"
     },
-    "Province": {
+    "province": {
       "unique_values": 47,
       "most_frequent": "Madrid"
     },
-    "Quality": {
+    "quality": {
       "unique_values": 5,
       "most_frequent": "buena"
     }

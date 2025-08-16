@@ -58,7 +58,7 @@ data_sources:
     format: "csv"
     data_directory: "socioeconomic_data"
     gdp_file: "PIB per cap provincias 2000-2021.csv"
-    population_file: "poblacion_provincias.csv"
+    population_21_file: "poblacion_provincias_21.csv"
     processed_gdp_file: "province_gdp.csv"
     processed_population_file: "province_population_size.csv"
     gdp_separator: ";"
@@ -104,15 +104,30 @@ output:
 # Validation Configuration
 validation:
   required_columns:
-    - "Province"
-    - "Year"
-    - "Air Pollution Level"
+    - air_pollutant
+    - air_pollutant_description
+    - data_aggregation_process
+    - year
+    - air_pollution_level
+    - unit_of_air_pollution_level
+    - air_quality_station_type
+    - air_quality_station_area
+    - longitude
+    - latitude
+    - altitude
+    - province
+    - quality
+    - respiratory_diseases_total
+    - life_expectancy_total
+    - pib
+    - population
+    - respiratory_deaths_per_100k
 
   data_types:
     numeric_columns:
-      - "Year"
-      - "Air Pollution Level"
-      - "Latitude"
+      - "year"
+      - "air_pollution_level"
+      - "latitude"
       - "Longitude"
     categorical_columns:
       - "Province"

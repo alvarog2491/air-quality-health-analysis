@@ -100,7 +100,7 @@ def test_merge_all_data(merging_step: DataMergingStep, sample_dataframes: Dict[s
         sample_dataframes["province_population"],
     )
 
-    # Verify merge results
+    # Verify merge results - should still be 3 rows since air_quality is the base
     assert len(merged_df) == 3
     assert (
         len(merged_df.columns) > 5
@@ -152,9 +152,9 @@ def test_merge_with_missing_data():
 
     population = pd.DataFrame(
         {
-            "Province": ["Madrid", "Barcelona"],
-            "Year": [2020, 2020],
-            "Population": [6500000, 5600000],
+            "Province": ["Madrid", "Barcelona", "Madrid", "Barcelona"],
+            "Year": [2019, 2019, 2020, 2020],
+            "Population": [6400000, 5500000, 6500000, 5600000],
         }
     )
 

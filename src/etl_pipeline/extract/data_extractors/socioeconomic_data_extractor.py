@@ -35,9 +35,9 @@ class SocioeconomicDataExtractor(BaseExtractor):
             "data_sources.socioeconomic.gdp_file",
             "PIB per cap provincias 2000-2021.csv",
         )
-        self._population_file: str = self.config.get(
-            "data_sources.socioeconomic.population_file",
-            "poblacion_provincias.csv",
+        self._population_21_file: str = self.config.get(
+            "data_sources.socioeconomic.population_21_file",
+            "poblacion_provincias_21.csv",
         )
         self._format = self.config.get(
             "data_sources.socioeconomic.format", "csv"
@@ -74,17 +74,22 @@ class SocioeconomicDataExtractor(BaseExtractor):
                 extracted DataFrames.
         """
         if self._format == "csv":
-            gdp_df, population_df = self._read_csv_files()
+            gdp_df, unified_population_df = self._read_csv_files()
             dataframes["gdp"] = gdp_df
-            dataframes["province_population"] = population_df
+            dataframes["province_population"] = unified_population_df
 
-    def _read_csv_files(self) -> Tuple[pd.DataFrame, pd.DataFrame]:
+    def _read_csv_files(
+        self,
+    ) -> Tuple[pd.DataFrame, pd.DataFrame]:
         """
         Read raw GDP and population data from CSV files.
+        
+        The population file is read directly:
+        - poblacion_provincias_21.csv: 4 columns (Provincias, Sexo, Periodo, Total)
 
         Returns:
-            Tuple[pd.DataFrame, pd.DataFrame]: DataFrames for GDP per capita
-                and provincial population.
+            Tuple[pd.DataFrame, pd.DataFrame]: DataFrames for
+            GDP per capita and provincial population data.
 
         Raises:
             FileNotFoundError: If any required file is missing.
@@ -100,18 +105,19 @@ class SocioeconomicDataExtractor(BaseExtractor):
             / self.raw_folder
             / self._gdp_file
         )
-        population_file = (
+        population_21_file = (
             self.data_path
             / self._data_directory
             / self.raw_folder
-            / self._population_file
+            / self._population_21_file
         )
+
 
         if not pib_file.is_file():
             raise FileNotFoundError(f"Required file not found: {pib_file}")
-        if not population_file.is_file():
+        if not population_21_file.is_file():
             raise FileNotFoundError(
-                f"Required file not found: {population_file}"
+                f"Required file not found: {population_21_file}"
             )
 
         try:
@@ -122,18 +128,19 @@ class SocioeconomicDataExtractor(BaseExtractor):
                 encoding=self._gdp_encoding,
             )
 
-            population_df = pd.read_csv(  # type: ignore
-                population_file,
+            population_21_df = pd.read_csv(  # type: ignore
+                population_21_file,
                 parse_dates=self._date_columns,
                 sep=self._population_separator,
                 decimal=self._population_decimal,
                 encoding=self._population_encoding,
             )
 
-            self._log_dataframe_info(gdp_df)
-            self._log_dataframe_info(population_df)
 
-            return gdp_df, population_df
+            self._log_dataframe_info(gdp_df)
+            self._log_dataframe_info(population_21_df)
+
+            return gdp_df, population_21_df
 
         except Exception as e:
             self.logger.error(f"Error loading CSV file: {str(e)}")

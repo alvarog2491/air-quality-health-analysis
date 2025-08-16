@@ -56,14 +56,37 @@ class DataCleaningStep(ETLStep):
 
         df = dataframes["output_df"]
 
+        self._remove_metadata_columns(df)
         self._remove_island_observations(df)
         self._filter_timeframe(df)
         self._convert_categories_to_lowercase(df)
         self._handle_null_values(df)
         self._handle_duplicated_rows(df)
         self._convert_to_appropriate_dtypes(df)
+        self._standarize_colnames(df)
 
         self.log_success(f"Dataset cleaned: {len(df)} records")
+
+    def _remove_metadata_columns(self, df: pd.DataFrame) -> None:
+        """
+        Remove metadata columns that are not needed for analysis.
+
+        Args:
+            df (pd.DataFrame): DataFrame to process.
+        """
+        metadata_columns = [
+            "Total Nacional",
+            "Comunidades y Ciudades Autónomas",
+        ]
+        columns_to_drop = [
+            col for col in metadata_columns if col in df.columns
+        ]
+
+        if columns_to_drop:
+            df.drop(columns=columns_to_drop, inplace=True)
+            self.logger.info(f"Removed metadata columns: {columns_to_drop}")
+        else:
+            self.logger.info("No metadata columns found to remove")
 
     def _convert_categories_to_lowercase(self, df: pd.DataFrame) -> None:
         """
@@ -192,3 +215,16 @@ class DataCleaningStep(ETLStep):
         for col, dtype in dtypes.items():
             if col in df.columns:
                 df[col] = df[col].astype(dtype)  # type: ignore
+
+    def _standarize_colnames(self, df: pd.DataFrame) -> None:
+        """
+        Standardize column names to lowercase and replace spaces with
+        underscores.
+
+        Args:
+            df (pd.DataFrame): DataFrame to process.
+        """
+        df.columns = [col.lower().replace(" ", "_") for col in df.columns]
+        self.logger.info(
+            "Standardized column names to lowercase and underscores"
+        )

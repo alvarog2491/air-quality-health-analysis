@@ -33,10 +33,10 @@ class SocioeconomicDataTransformer(BaseTransformer):
         Clean and standardize the loaded DataFrames.
 
         Args:
-            *df: gdp_df, population_df
+            *df: gdp_df, unified_population_df
 
         Returns:
-            Tuple of cleaned DataFrames.
+            Tuple of cleaned DataFrames: gdp_df, unified_population_df
 
         Raises:
             ValueError: If input count is not 2 or any DataFrame is empty.

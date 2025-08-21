@@ -26,7 +26,7 @@ This project follows a standard ML project structure:
 ### Setup
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone git@github.com:alvarog2491/air-quality-health-analysis.git
 cd air-quality-health-analysis
 
 # Install the project

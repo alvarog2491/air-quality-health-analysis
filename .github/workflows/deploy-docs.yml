@@ -1,0 +1,45 @@
+name: Deploy MkDocs
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install MkDocs and Material theme
+        run: pip install "mkdocs>=1.5.0" "mkdocs-material>=9.0.0"
+
+      - name: Build MkDocs site
+        run: mkdocs build
+
+      - name: Clean target folder on VPS
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          port: ${{ secrets.DEPLOY_PORT }}
+          script: |
+            rm -rf ${{ secrets.DEPLOY_PATH }}/*
+
+      - name: Deploy to VPS
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          port: ${{ secrets.DEPLOY_PORT }}
+          source: "site/*"
+          target: ${{ secrets.DEPLOY_PATH }}

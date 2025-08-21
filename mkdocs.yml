@@ -1,7 +1,10 @@
 site_name: Air Quality Health Analysis
 site_description: Analysis of air quality, health outcomes, and socioeconomic data across Spanish provinces
 site_author: Alvaro Granados
-site_url: https://alvarog2491.github.io/air-quality-health-analysis/
+site_url: https://alvaro-ai-ml-ds-lab.com/air-quality-health-analysis
+docs_dir: docs
+site_dir: site
+use_directory_urls: false
 
 repo_name: alvarog2491/air-quality-health-analysis
 repo_url: https://github.com/alvarog2491/air-quality-health-analysis

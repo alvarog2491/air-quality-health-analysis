@@ -1,16 +1,21 @@
 # Air Quality Health Analysis
 
 ![Tests Status](https://github.com/alvarog2491/air-quality-health-analysis/actions/workflows/tests.yml/badge.svg)
+![Docs](https://github.com/alvarog2491/air-quality-health-analysis/actions/workflows/deploy-docs.yml/badge.svg)
 
 A machine learning project for analyzing the relationship between air quality and health outcomes in Spanish provinces. This project combines air quality, health, and socioeconomic datasets into a unified dataset for ML analysis.
 
+## Documentation
+
+- [Project Documentation](https://alvaro-ai-ml-ds-lab.com/air-quality-health-analysis) - Complete documentation
+  
 ## Project Structure
 
 This project follows a standard ML project structure:
 
-- **ETL Pipeline**: Complete data extraction, transformation, and loading pipeline ([ETL Documentation](src/etl_pipeline/))
-- **Documentation**: Project documentation (coming soon with MkDocs)
-- **Data Processing**: Air pollutants (PM2.5, PM10, NO2, SO2, O3), respiratory disease mortality, life expectancy, GDP, and population data (2000-2021)
+- **ETL Pipeline**: Complete data extraction, transformation, and loading pipeline
+- **Modeling**: (To be implemented)
+- **Monitoring**: (To be implemented)
 
 ## Installation
 
@@ -46,11 +51,6 @@ air-quality-etl
 cd src
 python3 -m etl_pipeline.main_orchestrator
 ```
-
-## Documentation
-
-- [ETL Pipeline Documentation](src/etl_pipeline/) - Detailed ETL process documentation
-- Full project documentation (MkDocs - coming soon)
 
 ## License
 

@@ -2,6 +2,8 @@
 
 A modular ETL pipeline that combines air quality, health, and socioeconomic datasets from official Spanish sources into a unified dataset for machine learning analysis.
 
+**[Complete Documentation](https://alvaro-ai-ml-ds-lab.com/air-quality-health-analysis)** - Full project documentation with detailed guides and API reference
+
 ## Quick Start
 
 ### Running the Pipeline

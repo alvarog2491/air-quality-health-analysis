@@ -111,7 +111,6 @@ graph TD
 - **Air Quality**: 
     - Clean invalid Province values
     - Classify air quality levels using pollutant thresholds
-    - Standardize pollutant names to lowercase categories
 
 - **Health**: 
     - Rename columns (Provincias→Province, Periodo→Year, Total→target metrics)
@@ -143,7 +142,6 @@ graph TD
     B[Health Data] --> D
     C[Socioeconomic Data] --> D
     D --> E[Unified DataFrame]
-    E --> F[Multiple Records per<br/>Province-Year-Pollutant]
 ```
 
 </div>
@@ -259,7 +257,7 @@ graph TD
 - Processing logs and timestamps
 
 ### 8. DataQualityReportStep
-**Purpose**: Generate comprehensive quality reports
+**Purpose**: Generate quality reports
 
 <div align="center">
 
@@ -305,7 +303,7 @@ The pipeline includes built-in error recovery mechanisms:
 
 ## Testing
 
-Comprehensive test suite covers all pipeline components:
+Test suite that covers all pipeline components:
 
 ```bash
 # Run all ETL tests
@@ -341,5 +339,3 @@ The final dataset contains the following columns:
 | `pib` | float | PIB (GDP) in billions of euros |
 | `population` | integer | Province population |
 | `respiratory_deaths_per_100k` | float | Respiratory deaths per 100,000 population |
-
-This unified dataset enables comprehensive analysis of relationships between air quality measurements (with geographic context), health outcomes, and socioeconomic factors across Spanish provinces, with each record representing a specific pollutant measurement for a province-year combination.

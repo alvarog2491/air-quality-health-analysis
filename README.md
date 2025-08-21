@@ -37,8 +37,14 @@ pip install -e .[dev]
 ## Quick Start
 
 Run the complete ETL pipeline:
+
 ```bash
+# After installation, use the CLI command
 air-quality-etl
+
+# Or run manually (from project root)
+cd src
+python3 -m etl_pipeline.main_orchestrator
 ```
 
 ## Documentation

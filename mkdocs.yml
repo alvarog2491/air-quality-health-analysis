@@ -1,0 +1,67 @@
+site_name: Air Quality Health Analysis
+site_description: Analysis of air quality, health outcomes, and socioeconomic data across Spanish provinces
+site_author: Alvaro Granados
+site_url: https://alvarog2491.github.io/air-quality-health-analysis/
+
+repo_name: alvarog2491/air-quality-health-analysis
+repo_url: https://github.com/alvarog2491/air-quality-health-analysis
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - ETL Pipeline: etl-pipeline.md
+
+plugins:
+  - search
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.keys
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/alvarog2491/air-quality-health-analysis
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10.6.0/dist/mermaid.min.js

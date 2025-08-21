@@ -117,6 +117,9 @@ venv.bak/
 Thumbs.db
 ehthumbs.db
 
+# Secrets 
+.secrets 
+
 # Claude
 CLAUDE.md
 .claude
@@ -126,3 +129,4 @@ logs/
 
 # notebooks
 /notebooks/*
+
